@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Calendar, User } from 'lucide-react';
 
 const newsItems = [
@@ -8,21 +9,21 @@ const newsItems = [
     date: 'Oct 24, 2024',
     author: 'Admin',
     title: 'Importance of Product Registration in Dubai',
-    link: '#'
+    link: '/latest-news'
   },
   {
     image: 'https://almuhsiu.com/wp-content/uploads/2018/01/news-2.jpg',
     date: 'Oct 15, 2024',
     author: 'Admin',
     title: 'New UAE Visa Regulations for Businesses',
-    link: '#'
+    link: '/latest-news'
   },
   {
     image: 'https://almuhsiu.com/wp-content/uploads/2018/01/3.jpg',
     date: 'Oct 02, 2024',
     author: 'Admin',
     title: 'How to Choose the Right Business Center',
-    link: '#'
+    link: '/latest-news'
   }
 ];
 
@@ -35,7 +36,7 @@ const LatestNews = () => {
             <h4 className="text-secondary font-bold uppercase tracking-widest text-sm mb-4">Latest Blog</h4>
             <h2 className="text-3xl md:text-5xl font-bold text-primary">Every Single Update <br />From Our <span className="text-secondary">Latest News</span></h2>
           </div>
-          <button className="btn-primary whitespace-nowrap">View All Posts</button>
+          <Link to="/latest-news" className="btn-primary whitespace-nowrap inline-block text-center mt-4 md:mt-0">View All Posts</Link>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
@@ -72,13 +73,13 @@ const LatestNews = () => {
               </div>
               
               <h3 className="text-xl font-bold text-primary mb-4 group-hover:text-secondary transition-colors leading-tight">
-                <a href={news.link}>{news.title}</a>
+                <Link to={news.link}>{news.title}</Link>
               </h3>
               
-              <a href={news.link} className="text-primary font-bold inline-flex items-center border-b-2 border-secondary/20 hover:border-secondary transition-all pb-1 group/link">
+              <Link to={news.link} className="text-primary font-bold inline-flex items-center border-b-2 border-secondary/20 hover:border-secondary transition-all pb-1 group/link">
                 Read More
                 <span className="ml-2 transform group-hover/link:translate-x-1 transition-transform">→</span>
-              </a>
+              </Link>
             </motion.div>
           ))}
         </div>

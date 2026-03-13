@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Twitter, ArrowRight } from 'lucide-react';
 
 const Footer = () => {
@@ -30,12 +31,12 @@ const Footer = () => {
               Our Service
             </h4>
             <ul className="space-y-4">
-              <FooterLink>PRO Services</FooterLink>
-              <FooterLink>Bank Account Assistance</FooterLink>
-              <FooterLink>Product Registration</FooterLink>
-              <FooterLink>Golden VISA</FooterLink>
-              <FooterLink>Business Centers</FooterLink>
-              <FooterLink>Company Liquidation</FooterLink>
+              <FooterLink to="/services/pro-services">PRO Services</FooterLink>
+              <FooterLink to="/services/bank-account-assistance">Bank Account Assistance</FooterLink>
+              <FooterLink to="/services/product-registration">Product Registration</FooterLink>
+              <FooterLink to="/services/golden-visa">Golden VISA</FooterLink>
+              <FooterLink to="/services/business-centers">Business Centers</FooterLink>
+              <FooterLink to="/services/company-liquidation">Company Liquidation</FooterLink>
             </ul>
           </div>
 
@@ -45,12 +46,12 @@ const Footer = () => {
               Useful Links
             </h4>
             <ul className="space-y-4">
-              <FooterLink>About Us</FooterLink>
-              <FooterLink>Services</FooterLink>
-              <FooterLink>Dubai Freelance</FooterLink>
-              <FooterLink>Company Overview</FooterLink>
-              <FooterLink>Latest News</FooterLink>
-              <FooterLink>Contact Us</FooterLink>
+              <FooterLink to="/about-us">About Us</FooterLink>
+              <FooterLink to="/services">Services</FooterLink>
+              <FooterLink to="/dubai-freelance">Dubai Freelance</FooterLink>
+              <FooterLink to="/about-us/company-overview">Company Overview</FooterLink>
+              <FooterLink to="/latest-news">Latest News</FooterLink>
+              <FooterLink to="/contact-us">Contact Us</FooterLink>
             </ul>
           </div>
 
@@ -66,7 +67,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center">
                 <Phone className="text-secondary mr-4 flex-shrink-0" size={20} />
-                <a href="tel:+971524552586" className="text-gray-400 hover:text-white transition-colors">+971 52 455 2586</a>
+                <a href="tel:+971524552586" className="text-gray-400 hover:text-white transition-colors">+971 50 189 4138</a>
               </div>
               <div className="flex items-center">
                 <Mail className="text-secondary mr-4 flex-shrink-0" size={20} />
@@ -79,8 +80,8 @@ const Footer = () => {
         <div className="border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 gap-4">
           <p>© 2024 Almuhsiu Business Services. All Rights Reserved.</p>
           <div className="flex space-x-6">
-            <a href="#" className="hover:text-white">Privacy Policy</a>
-            <a href="#" className="hover:text-white">Terms & Conditions</a>
+            <Link to="#" className="hover:text-white">Privacy Policy</Link>
+            <Link to="#" className="hover:text-white">Terms & Conditions</Link>
           </div>
         </div>
       </div>
@@ -94,12 +95,12 @@ const SocialIcon = ({ icon }) => (
   </a>
 );
 
-const FooterLink = ({ children }) => (
+const FooterLink = ({ children, to }) => (
   <li>
-    <a href="#" className="text-gray-400 hover:text-secondary flex items-center group transition-colors">
+    <Link to={to} className="text-gray-400 hover:text-secondary flex items-center group transition-colors">
       <ArrowRight size={12} className="mr-3 opacity-0 group-hover:opacity-100 transition-all -ml-5 group-hover:ml-0" />
       {children}
-    </a>
+    </Link>
   </li>
 );
 

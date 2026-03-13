@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { FileText, BadgeCheck, Building2, Trash2, Globe, Users, Briefcase, Zap } from 'lucide-react';
 
 const allServices = [
@@ -61,9 +62,9 @@ const DetailedServices = () => {
               <p className="text-gray-500 text-sm leading-relaxed mb-4">
                 {service.desc}
               </p>
-              <button className="text-primary font-bold text-xs uppercase tracking-tighter hover:text-secondary transition-colors">
+              <Link to="/services" className="text-primary font-bold text-xs uppercase tracking-tighter hover:text-secondary transition-colors inline-block mt-auto pt-4">
                 Explore More +
-              </button>
+              </Link>
             </motion.div>
           ))}
         </div>

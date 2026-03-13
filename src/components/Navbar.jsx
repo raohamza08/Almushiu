@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Phone, Mail, Search, Facebook, Instagram, ChevronDown, Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { cn } from '../lib/utils';
 
 const TopBar = () => {
@@ -9,7 +10,7 @@ const TopBar = () => {
         <div className="flex items-center space-x-6">
           <a href="tel:+971524552586" className="flex items-center hover:text-secondary transition-colors">
             <Phone size={16} className="mr-2 text-secondary" />
-            +971 52 455 2586
+            +971 50 189 4138
           </a>
           <a href="mailto:contact@almuhsiutypingcenter.com" className="flex items-center hover:text-secondary transition-colors">
             <Mail size={16} className="mr-2 text-secondary" />
@@ -17,9 +18,9 @@ const TopBar = () => {
           </a>
         </div>
         <div className="flex items-center space-x-4">
-          <button className="bg-secondary text-white px-6 py-2 rounded-full hover:bg-secondary-dark transition-all duration-300 font-bold text-xs uppercase tracking-wider">
+          <Link to="/contact-us" className="bg-secondary text-white px-6 py-2 rounded-full hover:bg-secondary-dark transition-all duration-300 font-bold text-xs uppercase tracking-wider inline-block">
             Request a Call back
-          </button>
+          </Link>
         </div>
       </div>
     </div>
@@ -39,19 +40,30 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#' },
+    { name: 'Home', href: '/' },
     { 
       name: 'About Us', 
-      href: '#',
-      dropdown: ['Company Overview', 'Mission & Vision', 'Our Team']
+      href: '/about-us',
+      dropdown: [
+        { name: 'Company Overview', href: '/about-us/company-overview' },
+        { name: 'Mission & Vision', href: '/about-us/mission-vision' },
+        { name: 'Our Team', href: '/about-us/our-team' },
+      ]
     },
     { 
       name: 'Services', 
-      href: '#',
-      dropdown: ['Product Registration', 'Bank Account Assistance', 'PRO Services', 'Golden Visa', 'Business Centers', 'Company Liquidation']
+      href: '/services',
+      dropdown: [
+        { name: 'Product Registration', href: '/services/product-registration' },
+        { name: 'Bank Account Assistance', href: '/services/bank-account-assistance' },
+        { name: 'PRO Services', href: '/services/pro-services' },
+        { name: 'Golden Visa', href: '/services/golden-visa' },
+        { name: 'Business Centers', href: '/services/business-centers' },
+        { name: 'Company Liquidation', href: '/services/company-liquidation' },
+      ]
     },
-    { name: 'Dubai Freelance', href: '#' },
-    { name: 'Contact Us', href: '#' },
+    { name: 'Dubai Freelance', href: '/dubai-freelance' },
+    { name: 'Contact Us', href: '/contact-us' },
   ];
 
   return (
@@ -75,24 +87,24 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center space-x-8">
             {navLinks.map((link) => (
               <div key={link.name} className="relative group">
-                <a 
-                  href={link.href} 
+                <Link 
+                  to={link.href} 
                   className="nav-link flex items-center py-2"
                 >
                   {link.name}
                   {link.dropdown && <ChevronDown size={14} className="ml-1 group-hover:rotate-180 transition-transform duration-300" />}
-                </a>
+                </Link>
                 
                 {link.dropdown && (
                   <div className="absolute top-full left-0 w-64 bg-secondary mt-2 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-xl rounded-b-md">
                     {link.dropdown.map((item) => (
-                      <a 
-                        key={item} 
-                        href="#" 
+                      <Link 
+                        key={item.name} 
+                        to={item.href} 
                         className="block px-6 py-3 text-white hover:bg-white hover:text-primary transition-colors text-sm font-semibold border-b border-white/10 last:border-0"
                       >
-                        {item}
-                      </a>
+                        {item.name}
+                      </Link>
                     ))}
                   </div>
                 )}
@@ -127,13 +139,17 @@ const Navbar = () => {
           {navLinks.map((link) => (
             <div key={link.name} className="px-6 py-2">
               <div className="flex justify-between items-center text-white font-medium py-2">
-                <span>{link.name}</span>
+                <Link to={link.href} onClick={() => setMobileMenuOpen(false)}>
+                  {link.name}
+                </Link>
                 {link.dropdown && <ChevronDown size={18} />}
               </div>
               {link.dropdown && mobileMenuOpen && (
                 <div className="pl-4 mt-1 border-l border-secondary/50">
                   {link.dropdown.map((item) => (
-                    <a key={item} href="#" className="block py-2 text-gray-300 text-sm">{item}</a>
+                    <Link key={item.name} to={item.href} onClick={() => setMobileMenuOpen(false)} className="block py-2 text-gray-300 text-sm">
+                      {item.name}
+                    </Link>
                   ))}
                 </div>
               )}

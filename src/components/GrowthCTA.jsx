@@ -18,7 +18,7 @@ const GrowthCTA = () => {
             <div className="text-white">
               <p className="text-sm font-bold uppercase tracking-widest opacity-80">Call Us Anytime</p>
               <a href="tel:+971524552586" className="text-2xl md:text-3xl font-bold hover:text-secondary transition-colors">
-                +971 52 455 2586
+                +971 50 189 4138
               </a>
             </div>
           </div>

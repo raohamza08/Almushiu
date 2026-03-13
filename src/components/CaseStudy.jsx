@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Play } from 'lucide-react';
 
 const CaseStudy = () => {
@@ -42,7 +43,7 @@ const CaseStudy = () => {
               </div>
             </div>
             
-            <button className="btn-primary">Get Appointment</button>
+            <Link to="/contact-us" className="btn-primary inline-block">Get Appointment</Link>
           </motion.div>
           
           <motion.div

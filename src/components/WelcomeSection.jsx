@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Settings, Landmark, ShieldCheck, FileText, BadgeCheck, Building2, Trash2 } from 'lucide-react';
 
 const services = [
@@ -7,19 +8,19 @@ const services = [
     icon: <Settings size={40} className="text-secondary" />,
     title: 'Product Registration',
     description: 'We help you register your products with the relevant authorities in Dubai and the UAE, ensuring compliance with all regulations.',
-    link: '#'
+    link: '/services/product-registration'
   },
   {
     icon: <Landmark size={40} className="text-secondary" />,
     title: 'Bank Account Assistance',
     description: 'Opening a business bank account in the UAE can be complex. We guide you through the process and help you choose the right bank.',
-    link: '#'
+    link: '/services/bank-account-assistance'
   },
   {
     icon: <ShieldCheck size={40} className="text-secondary" />,
     title: 'PRO Services',
     description: 'Our Public Relations Officer services handle all your government-related tasks, visas, and documentation efficiently.',
-    link: '#'
+    link: '/services/pro-services'
   }
 ];
 
@@ -46,9 +47,9 @@ const WelcomeSection = () => {
               <p className="text-gray-600 mb-8 leading-relaxed">
                 Almuhsiu Business Services is a leading consultancy firm in Dubai, dedicated to providing high-quality solutions for entrepreneurs and established businesses. Our expertise spans across multiple domains, ensuring your journey in the UAE market is smooth and successful.
               </p>
-              <button className="bg-primary text-white font-bold py-3 px-8 rounded-full hover:bg-primary-light transition-all duration-300">
+              <Link to="/about-us" className="bg-primary text-white font-bold py-3 px-8 rounded-full hover:bg-primary-light transition-all duration-300 inline-block">
                 Read More About Us
-              </button>
+              </Link>
             </motion.div>
           </div>
 
@@ -70,10 +71,10 @@ const WelcomeSection = () => {
                 <p className="text-gray-600 mb-6 line-clamp-3">
                   {service.description}
                 </p>
-                <a href={service.link} className="text-secondary font-bold inline-flex items-center group-hover:underline">
+                <Link to={service.link} className="text-secondary font-bold inline-flex items-center group-hover:underline">
                   Read More
                   <span className="ml-2">→</span>
-                </a>
+                </Link>
               </motion.div>
             ))}
           </div>

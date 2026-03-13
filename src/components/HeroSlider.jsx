@@ -2,6 +2,7 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -74,12 +75,12 @@ const HeroSlider = () => {
                     transition={{ duration: 0.8, delay: 0.6 }}
                     className="flex flex-wrap gap-4"
                   >
-                    <button className="btn-outline">
+                    <Link to="/services" className="btn-outline inline-block text-center mt-2">
                       {slide.primaryBtn}
-                    </button>
-                    <button className="btn-primary">
+                    </Link>
+                    <Link to="/contact-us" className="btn-primary inline-block text-center mt-2">
                       {slide.secondaryBtn}
-                    </button>
+                    </Link>
                   </motion.div>
                 </div>
               </div>
