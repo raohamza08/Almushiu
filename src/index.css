@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lato:wght@400;700&display=swap');
+
+@theme {
+  --color-primary: #012a4a;
+  --color-primary-light: #013a63;
+  --color-primary-dark: #011e33;
+  
+  --color-secondary: #d4af37;
+  --color-secondary-light: #e5c158;
+  --color-secondary-dark: #b3922d;
+  
+  --color-accent: #0a9396;
+  --color-accent-light: #00b4d8;
+  --color-accent-dark: #005f73;
+  
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-lato: "Lato", sans-serif;
+  
+  --background-image-dots-pattern: radial-gradient(circle, #ccc 1px, transparent 1px);
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply font-lato text-gray-800 bg-white overflow-x-hidden;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn-primary {
+    @apply bg-secondary hover:bg-secondary-dark text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:text-primary transition-all duration-300;
+  }
+}
+
+/* Custom styles for Almuhsiu look */
+.nav-link {
+  @apply relative text-white font-medium hover:text-secondary transition-colors duration-300;
+}
+
+.nav-link::after {
+  content: '';
+  @apply absolute bottom-[-4px] left-0 w-0 h-[2px] bg-secondary transition-all duration-300;
+}
+
+.nav-link:hover::after {
+  @apply w-full;
+}
+
+/* Dots pattern background utility */
+.bg-dots {
+  background-image: radial-gradient(#d1d5db 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Swiper custom styling */
+.hero-swiper .swiper-button-next,
+.hero-swiper .swiper-button-prev {
+  @apply text-white bg-black/30 w-12 h-12 rounded-full after:text-lg;
+}
+
+.hero-swiper .swiper-pagination-bullet-active {
+  @apply bg-secondary;
+}
+
+.section-padding {
+  @apply py-20;
+}
