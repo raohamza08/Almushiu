@@ -3,9 +3,9 @@ import { MessageCircle } from 'lucide-react';
 
 const WhatsAppWidget = () => {
   return (
-    <a 
-      href="https://wa.me/971524552586" 
-      target="_blank" 
+    <a
+      href="https://wa.me/971558037366"
+      target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-[9999] bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 animate-bounce hover:animate-none"
       title="Chat with us on WhatsApp"

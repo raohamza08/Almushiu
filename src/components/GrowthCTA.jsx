@@ -10,15 +10,15 @@ const GrowthCTA = () => {
             <h2 className="text-2xl md:text-4xl font-bold mb-2">We Help You for Growth Your Business</h2>
             <p className="text-white/80 text-lg">Contact our experts today for a free consultation and customized solutions.</p>
           </div>
-          
+
           <div className="flex items-center bg-white/10 backdrop-blur-sm p-4 rounded-xl border border-white/20">
             <div className="bg-secondary p-4 rounded-lg mr-6">
               <PhoneCall size={32} className="text-white" />
             </div>
             <div className="text-white">
               <p className="text-sm font-bold uppercase tracking-widest opacity-80">Call Us Anytime</p>
-              <a href="tel:+971524552586" className="text-2xl md:text-3xl font-bold hover:text-secondary transition-colors">
-                +971 50 189 4138
+              <a href="tel:+971558037366" className="text-2xl md:text-3xl font-bold hover:text-secondary transition-colors">
+                +971 55 803 7366
               </a>
             </div>
           </div>

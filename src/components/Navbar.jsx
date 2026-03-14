@@ -8,11 +8,11 @@ const TopBar = () => {
     <div className="bg-white border-b border-gray-100 py-2 hidden lg:block">
       <div className="container-custom flex justify-between items-center text-sm font-medium text-gray-600">
         <div className="flex items-center space-x-6">
-          <a href="tel:+971524552586" className="flex items-center hover:text-secondary transition-colors">
+          <a href="tel:+971558037366" className="flex items-center hover:text-secondary transition-colors">
             <Phone size={16} className="mr-2 text-secondary" />
-            +971 50 189 4138
+            +971 55 803 7366
           </a>
-          <a href="mailto:contact@almuhsiutypingcenter.com" className="flex items-center hover:text-secondary transition-colors">
+          <a href="mailto:info@almuhsiutypingcenter.com" className="flex items-center hover:text-secondary transition-colors">
             <Mail size={16} className="mr-2 text-secondary" />
             Free Enquiry
           </a>

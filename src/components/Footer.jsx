@@ -9,9 +9,9 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
           {/* About Column */}
           <div className="space-y-8">
-            <img 
-              src="https://almuhsiu.com/wp-content/uploads/2024/10/aaa1112.png" 
-              alt="Almuhsiu Logo" 
+            <img
+              src="https://almuhsiu.com/wp-content/uploads/2024/10/aaa1112.png"
+              alt="Almuhsiu Logo"
               className="h-16 w-auto"
             />
             <p className="text-gray-400 leading-relaxed">
@@ -63,15 +63,15 @@ const Footer = () => {
             <div className="space-y-6">
               <div className="flex items-start">
                 <MapPin className="text-secondary mr-4 flex-shrink-0 mt-1" size={20} />
-                <p className="text-gray-400">Office No. 101, Business Center, Dubai, UAE</p>
+                <p className="text-gray-400">Office# 1701, Ontario Tower, Business Bay, Dubai, UAE</p>
               </div>
               <div className="flex items-center">
                 <Phone className="text-secondary mr-4 flex-shrink-0" size={20} />
-                <a href="tel:+971524552586" className="text-gray-400 hover:text-white transition-colors">+971 50 189 4138</a>
+                <a href="tel:+971558037366" className="text-gray-400 hover:text-white transition-colors">+971 55 803 7366</a>
               </div>
               <div className="flex items-center">
                 <Mail className="text-secondary mr-4 flex-shrink-0" size={20} />
-                <a href="mailto:contact@almuhsiutypingcenter.com" className="text-gray-400 hover:text-white transition-colors">contact@almuhsiutypingcenter.com</a>
+                <a href="mailto:info@almuhsiutypingcenter.com" className="text-gray-400 hover:text-white transition-colors">info@almuhsiutypingcenter.com</a>
               </div>
             </div>
           </div>
